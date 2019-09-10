@@ -1,0 +1,2 @@
+class ItemExtra < ApplicationRecord
+end

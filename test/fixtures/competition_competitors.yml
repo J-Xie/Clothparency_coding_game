@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  competitionKey: 1
+  itemKey: 1
+  competitorKey: 1
+
+two:
+  competitionKey: 1
+  itemKey: 1
+  competitorKey: 1

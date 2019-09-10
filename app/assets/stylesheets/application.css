@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.width_600 {
+  margin: auto;
+  width: 600px;
+}
+
+.width_800 {
+  margin: auto;
+  width: 800px;
+}
+
+.margin_auto {
+  margin: auto;
+}
+
+.inline_block {
+  display: inline-block;
+}
+
+.margin_bottom {
+  margin-bottom: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  font-size: 17px;
+  list-style: none;
+}
+
+/* ul > li {
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+} */
+
+.container {
+  text-align: center;
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.scroll_x {
+  /* overflow-x: scroll; */
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.choice_container {
+  /* border: 1px solid grey; */
+  border-radius: 15px;
+  display: flex;
+  max-width: 85%;
+  /* max-width: 80%; */
+  padding: 10px;
+}
+.choice_list {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 20px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button_label {
+  font-size: 18px;
+}
+
+.button {
+  min-width: 220px;
+  display: block;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 13px;
+  margin: 25px 20px 0;
+
+  outline: none;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+}
+.button:hover {
+  opacity: 0.8;
+  background-color: #2980b9;
+}
+.button.rounded {
+  border-radius: 25px;
+}
+.button.disabled {
+  cursor: not-allowed;
+  background-color: #95a5a6;
+}
+.button.positive {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.extra_button {
+  min-width: 160px;
+  font-size: 15px;
+}
+.success_message {
+  font-size: 15px;
+  color: #2ecc71;
+}
+
+li {
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 13px;
+  margin: 25px 0 0 0;
+  width: auto;
+}
+
+.form {
+  width: 500px;
+  padding: 20px;
+}
+
+.submit_button {
+  width: 200px;
+  height: 45px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #1abc9c;
+  border-radius: 25px;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+.submit_button:hover,
+.submit_button:focus {
+  background-color: #16a085;
+  color: #ecf0f1;
+  opacity: 0.8;
+}
+/* .submit_button:active {
+  background-color: rgba(255, 160, 122, 0.75);
+} */
+
+/* .scrollable_container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 90%;
+  height: 80%;
+} */

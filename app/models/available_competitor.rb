@@ -1,0 +1,2 @@
+class AvailableCompetitor < ApplicationRecord
+end
