@@ -57,18 +57,25 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
       body: JSON.stringify({
         items: selectedCompetitors
       })
+    }).then(res => {
+      if (res.status === 200) {
+        setMessage(
+          "Les compétiteurs et extras ont été défini pour la compétition actuelle"
+        );
+      }
     });
     setSelectedCompetitors({});
   }, [selectedCompetitors]);
 
   return (
     <div className="container">
-      {!competition && <div>Aucune compétition n'as été crée</div>}
+      {!competition && <h3>Aucune compétition n'as été crée</h3>}
       {Boolean(competition) && (
         <React.Fragment>
           <h1>
             Veuillez choisir un (le meilleur) competiteur pour chaque catégorie
           </h1>
+          <p className="success_message">{message}</p>
           <h2>Les catégories disponibles :</h2>
           <div className="choice_container">
             <div className="flex">
