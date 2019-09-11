@@ -6,6 +6,7 @@ class CompetitorController < ApplicationController
       itemRows = Item.where(id: availableCompetitors)
       
       {
+        id: competitor.id,
         name: competitor.name,
         items: itemRows
       }

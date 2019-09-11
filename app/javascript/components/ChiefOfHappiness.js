@@ -98,7 +98,7 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
                   ))}
                   {item.extras.length > 0 && (
                     <div className="inline_block">
-                      <p>Customization</p>
+                      <p>Customisation</p>
                       {item.extras.map(extra => (
                         <Button
                           className="extra_button"

@@ -37,6 +37,7 @@ const LinguiniInterface = ({ items }) => {
     }).then(res => {
       if (res.status === 200) {
         setMessage("Une compétition avec ces catégories a été crée");
+        window.location.href = "/chief_of_happiness";
       }
     });
     setSelectedItems({});
