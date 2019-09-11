@@ -42,20 +42,20 @@
   flex-wrap: wrap;
 }
 
+.select_box {
+  display: block;
+  max-width: 250px;
+}
+
 ul {
   font-size: 17px;
   list-style: none;
 }
 
-/* ul > li {
-  transition: all 0.3s ease-out;
-  cursor: pointer;
-} */
-
 .container {
   text-align: center;
   width: 100%;
-  height: 98vh;
+  height: 97.5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,18 +63,20 @@ ul {
   margin-top: 10px;
 }
 
-.scroll_x {
-  /* overflow-x: scroll; */
-  padding-bottom: 15px;
-  padding-left: 10px;
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .choice_container {
-  /* border: 1px solid grey; */
   border-radius: 15px;
   display: flex;
   max-width: 85%;
-  /* max-width: 80%; */
   padding: 10px;
 }
 .choice_list {
@@ -85,13 +87,26 @@ ul {
   flex-wrap: wrap;
 }
 
+.card {
+  min-width: 275px;
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .button_label {
   font-size: 18px;
 }
 
 .button {
   min-width: 220px;
-  display: block;
+  /* display: block; */
   transition: all 0.3s ease-out;
   cursor: pointer;
   font-size: 17px;
@@ -163,14 +178,3 @@ li {
   color: #ecf0f1;
   opacity: 0.8;
 }
-/* .submit_button:active {
-  background-color: rgba(255, 160, 122, 0.75);
-} */
-
-/* .scrollable_container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: 90%;
-  height: 80%;
-} */

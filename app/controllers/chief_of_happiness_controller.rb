@@ -20,30 +20,6 @@ class ChiefOfHappinessController < ApplicationController
           competitorsId: competitorsId,
         }
       }
-
-      # @competitionsCompetitor = competitionsCompetitor.each{ |cc|
-      #   item = Item.where(id: cc[:itemKey]).first
-
-      #   itemExtras = ItemExtra.where(itemKey: item.id)
-      #   puts itemExtras
-
-        
-      #   availableCompetitors = AvailableCompetitor.where(itemKey: item.id)
-      #   puts availableCompetitors
-        
-      #   competitors = availableCompetitors.each{|competitor|
-      #     Competitor.where(id: competitor.competitorKey)
-      #   }
-      #   puts competitors
-
-      #   {
-      #     itemId: item.id,
-      #     itemName: item.name,
-      #     extras: itemExtras,
-      #     competitors: availableCompetitors
-      #   }
-      # }
-      
     end
   end
 end

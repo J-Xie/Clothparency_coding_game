@@ -12,6 +12,7 @@ class CompetitionCompetitorController < ApplicationController
           extraName = extra.first.name
         end
         {
+          id: cc.id,
           itemName: Item.where(id: cc.itemKey).first.name,
           extraName: extraName,
           competitorName: Competitor.where(id: cc.competitorKey).first.name
@@ -24,7 +25,6 @@ class CompetitionCompetitorController < ApplicationController
     list = params[:list]
     list.each{ |item|
       if Item.where(name: item).empty?
-        puts "::: No record in Pastry for #{item} :::"
       else
         puts Item.where(name: item).first.id
         CompetitionCompetitor.create({
@@ -46,6 +46,6 @@ class CompetitionCompetitorController < ApplicationController
   end
 
   def show
-    
+
   end
 end

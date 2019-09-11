@@ -113,7 +113,7 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
           <div className="choice_container">
             <div className="flex">
               {items.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className="select_box">
                   <p className="button_label">{item.name}</p>
                   {item.competitorsId.map(competitorId => (
                     <Button

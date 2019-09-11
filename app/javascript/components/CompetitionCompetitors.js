@@ -1,15 +1,21 @@
 import React from "react";
+import { get } from "lodash";
 
-const CompetitionCompetitors = ({ competitionsMap }) => (
-  <ul className="width_600">
-    {competitionsMap.map(competition => (
-      <li key={competition.id} className="margin_bottom">
-        <p>Categorie: {competition.itemName}</p>
-        {competition.extraName !== "" && <p>Extra : {competition.extraName}</p>}
-        <p>Competiteur: {competition.competitorName}</p>
-      </li>
-    ))}
-  </ul>
-);
+const CompetitionCompetitors = ({ competitionsMap }) =>
+  console.log(competitionsMap) || (
+    <div className="container">
+      {competitionsMap.map(competition => (
+        <div key={competition.id} className="card margin_bottom">
+          <p>
+            Categorie #{competition.id}: {get(competition, "itemName")}
+          </p>
+          {competition.extraName !== "" && (
+            <p>Extra : {get(competition, "extraName")}</p>
+          )}
+          <p>Competiteur: {get(competition, "competitorName")}</p>
+        </div>
+      ))}
+    </div>
+  );
 
 export default CompetitionCompetitors;

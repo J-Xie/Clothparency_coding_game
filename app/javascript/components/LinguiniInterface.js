@@ -44,7 +44,7 @@ const LinguiniInterface = ({ items }) => {
 
   return (
     <div className="container">
-      {message && <p className="">{message}</p>}
+      {message && <p className="success_message">{message}</p>}
       <h1>Choisissez les catégories à évaluer cette semaine</h1>
       <div className="choice_container">
         <div>
