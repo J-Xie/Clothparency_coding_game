@@ -8,7 +8,6 @@ class CompetitionCompetitorController < ApplicationController
         extra = ItemExtra.where(id: cc.extraKey)
         extraName = ''
         if extra.exists?
-          puts extra
           extraName = extra.first.name
         end
         {
@@ -26,7 +25,6 @@ class CompetitionCompetitorController < ApplicationController
     list.each{ |item|
       if Item.where(name: item).empty?
       else
-        puts Item.where(name: item).first.id
         CompetitionCompetitor.create({
           itemKey: Item.where(name: item).first.id,
           competitorkey: -1
@@ -37,9 +35,7 @@ class CompetitionCompetitorController < ApplicationController
   
   def update
     list = params[:list]
-    puts list
     list.each{ |competition, competitor|
-      puts "competition : #{competition} competitor : #{competitor}"
       @competition = Competition.find_by(itemName: competition)
       @competition.update(competitorName: competitor)
     }

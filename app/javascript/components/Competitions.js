@@ -7,7 +7,7 @@ const Competitions = ({ competitionsMap }) => {
       () => (window.location.href = `/competition/show/${competitionId}`)
     );
   };
-  console.log(competitionsMap);
+
   return (
     <div className="container">
       <h1>Compétitions créer jusque là</h1>

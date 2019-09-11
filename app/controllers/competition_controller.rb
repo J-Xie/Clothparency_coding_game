@@ -24,26 +24,21 @@ class CompetitionController < ApplicationController
   
   def update
     items = params[:items]
-    puts items
     items.each{ |itemKey, ids|
-      puts "competition : #{itemKey} competitor : #{ids}"
       @competition = CompetitionCompetitor.find_by(itemKey: itemKey)
       @competition.update(competitorKey: ids[:competitor], extraKey: ids[:extra])
     }
   end
 
   def show
-    puts params
     competition = Competition.where(id: params[:id]).first
     if competition
       competitionCompetitors = CompetitionCompetitor.where(competitionKey: competition.id)
 
       @competitionsMap = competitionCompetitors.map { |cc|
-        puts cc.itemKey
         extra = ItemExtra.where(id: cc.extraKey)
         extraName = ''
         if extra.exists?
-          puts extra
           extraName = extra.first.name
         end
         {

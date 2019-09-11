@@ -2,15 +2,9 @@ import React, { useState, useMemo, useCallback } from "react";
 import Button from "./Button";
 import ExtraPage from "./ExtraPage";
 
-const useCategoryList = () => {
-  return useMemo(() => {}, []);
-};
-
 const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
   const [message, setMessage] = useState("");
   const [selectedCompetitors, setSelectedCompetitors] = useState({});
-
-  useCategoryList();
 
   const disabled = useMemo(() => {
     let res = true;
@@ -31,35 +25,13 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
 
   const onChange = useCallback(
     (itemId, competitorId) => {
-      const duplicate = Object.values(selectedCompetitors).some(
-        ({ competitor }) => {
-          if (competitor !== competitorId) {
-            return true;
-          }
-          return false;
-        }
-      );
-      const items = {
+      setSelectedCompetitors({
         ...selectedCompetitors,
         [itemId]: {
           ...selectedCompetitors[itemId],
           competitor: competitorId
         }
-      };
-      console.log(duplicate);
-      // if (duplicate) {
-      //   const item = selectedCompetitors.find(
-      //     item => item.id !== itemId && competitorId === item.competitor
-      //   );
-      //   items = {
-      //     ...items,
-      //     [item.id]: {
-      //       ...selectedCompetitors[item.id],
-      //       competitor: -1
-      //     }
-      //   };
-      // }
-      setSelectedCompetitors(items);
+      });
     },
     [selectedCompetitors]
   );
@@ -78,8 +50,6 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
   );
 
   const onSubmit = useCallback(() => {
-    console.log(selectedCompetitors);
-
     fetch("/competition/update", {
       method: "POST",
       headers: {
@@ -88,17 +58,8 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
       body: JSON.stringify({
         items: selectedCompetitors
       })
-      //   body: JSON.stringify({
-      //     items: {
-      //       fraise: {
-      //         competitor: "id",
-      //         extra: "id"
-      //       }
-      //     }
-      //   })
     });
   }, [selectedCompetitors]);
-  console.log(selectedCompetitors);
 
   return (
     <div className="container">
