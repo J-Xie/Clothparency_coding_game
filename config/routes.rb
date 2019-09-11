@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  get 'item/index'
+  get 'item/create'
+  get 'competitor/index'
+  get 'competitor/create'
   get 'competition/index'
+  get 'competition/show/:id', to: 'competition#show'
 
   get 'competition_competitor/index'
   get 'competition_competitor/list'
@@ -12,11 +17,11 @@ Rails.application.routes.draw do
   post 'competition/update' => 'competition#update'
 
   get 'chief_of_happiness' => 'chief_of_happiness#index'
-  get 'linguini/index'
+  get 'linguini/' => 'linguini#index'
   
   get 'item_generation' => 'item_generation#index'
   post 'item_generation' => 'item_generation#create'
   # post 'item_generation/new' => 'item_generation#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'linguini#index'
+  root to: 'application#index'
 end

@@ -1,8 +1,11 @@
 class CompetitionController < ApplicationController
   def index
-    @competitions = Competition.all
-    @competitionsMap = @competitions.map { |competition|
-      itemKeys = Item.where()
+    competitions = Competition.all
+    @competitionsMap = {}
+    competitions.map { |competition|
+      competitionCompetitors = CompetitionCompetitor.where(competitionKey: competition.id)
+      competitions = competitionCompetitors.map { |cc| Item.where(id: cc.itemKey).first }
+      @competitionsMap[competition.id] = competitions
     }
     
   end
@@ -30,6 +33,26 @@ class CompetitionController < ApplicationController
   end
 
   def show
-    @competitions = Competition.all
+    puts params
+    competition = Competition.where(id: params[:id]).first
+    if competition
+      competitionCompetitors = CompetitionCompetitor.where(competitionKey: competition.id)
+
+      @competitionsMap = competitionCompetitors.map { |cc|
+        puts cc.itemKey
+        extra = ItemExtra.where(id: cc.extraKey)
+        extraName = ''
+        if extra.exists?
+          puts extra
+          extraName = extra.first.name
+        end
+        {
+          id: cc.id,
+          itemName: Item.where(id: cc.itemKey).first.name,
+          extraName: extraName,
+          competitorName: cc.competitorKey ? Competitor.where(id: cc.competitorKey).first.name : ''
+        }
+      }
+    end
   end
 end
