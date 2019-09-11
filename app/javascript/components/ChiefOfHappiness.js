@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useCallback } from "react";
 import Button from "./Button";
-import ExtraPage from "./ExtraPage";
 
 const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
   const [message, setMessage] = useState("");
@@ -59,6 +58,7 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
         items: selectedCompetitors
       })
     });
+    setSelectedCompetitors({});
   }, [selectedCompetitors]);
 
   return (
@@ -67,10 +67,9 @@ const ChiefOfHappiness = ({ competition, items, competitorsMap }) => {
       {Boolean(competition) && (
         <React.Fragment>
           <h1>
-            Veuillez choisir un (le meilleur) competiteur pour chaque
-            competition
+            Veuillez choisir un (le meilleur) competiteur pour chaque catégorie
           </h1>
-          <h2>Les competitions de la semaine :</h2>
+          <h2>Les catégories disponibles :</h2>
           <div className="choice_container">
             <div className="flex">
               {items.map(item => (

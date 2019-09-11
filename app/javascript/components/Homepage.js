@@ -5,7 +5,7 @@ import Button from "./Button";
 const navItems = [
   { name: "Competitions", path: "/competition/index" },
   { name: "Competiteurs", path: "/competitor/index" },
-  { name: "Catégories", path: "/items/index" }
+  { name: "Catégories", path: "/item/index" }
 ];
 
 const Homepage = () => {

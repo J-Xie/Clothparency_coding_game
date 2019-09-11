@@ -48,7 +48,6 @@ const LinguiniInterface = ({ items }) => {
       <h1>Choisissez les catégories à évaluer cette semaine</h1>
       <div className="choice_container">
         <div>
-          <h3>Categories</h3>
           <div className="choice_list">
             {items.map(item => (
               <Button
